@@ -50,5 +50,3 @@ Usa **Strategy** cuando:
 - Quieres **limpiar** una clase que hace demasiadas cosas y extraer comportamientos en clases independientes.
 
 
-- Repositorio de referencia del curso:  
-  `https://github.com/luisburgos/design_patterns_katas`
