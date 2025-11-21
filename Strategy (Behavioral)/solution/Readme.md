@@ -1,10 +1,10 @@
 Solution
 # Kata: Strategy – Solution
 
-> ⚠️ **Sugerencia**
->
-> Revisa esta solución **solo después** de haber intentado el reto por tu cuenta.  
-> El objetivo de la kata es practicar el razonamiento de diseño, no solo copiar código.
+ ⚠️ **Sugerencia**
+
+ Revisa esta solución **solo después** de haber intentado el reto por tu cuenta.  
+ El objetivo de la kata es practicar el razonamiento de diseño, no solo copiar código.
 
 ---
 
@@ -58,3 +58,15 @@ Al ejecutar `strategy.solution.Main`, puedes obtener algo como:
   - Counting cash...
   - Verifying authenticity of bills...
   - Registering cash payment...
+
+```
+Principios aplicados
+
+SRP – Cada estrategia se ocupa de una sola cosa: un tipo de pago.
+
+OCP – El sistema es extensible añadiendo nuevas estrategias, sin tocar código existente.
+
+DIP – El contexto depende de la abstracción PaymentStrategy, no de implementaciones concretas.
+
+Usando este enfoque, tu sistema está preparado para seguir creciendo sin volverse una bola de if/else.
+
