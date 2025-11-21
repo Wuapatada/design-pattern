@@ -34,10 +34,10 @@ public class Main {
 ```
 
 ### 'PaymentProcessor.java'
-package strategy.challenge;
+
 
 ```java
-
+package strategy.challenge;
 public class PaymentProcessor {
 
     public void processPayment(String type, double amount) {
@@ -61,5 +61,16 @@ public class PaymentProcessor {
         }
     }
 }
+```
+Problemas a identificar
+
+-PaymentProcessor tiene demasiadas responsabilidades.
+
+-Cada nueva forma de pago implica modificar esta clase.
+
+-Violación del principio abierto/cerrado.
+
+-Dificultad para probar cada comportamiento de manera aislada.
+
 
 
