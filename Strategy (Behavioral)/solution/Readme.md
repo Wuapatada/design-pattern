@@ -1,5 +1,5 @@
 Solution
-# Kata: Strategy – Solution
+# Solution(Strategy)
 
  ⚠️ **Sugerencia**
 
