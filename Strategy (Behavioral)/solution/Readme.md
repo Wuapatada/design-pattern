@@ -1,5 +1,5 @@
 Solution
-# Solution(Strategy)
+# Solucion(Strategy)
 
  ⚠️ **Sugerencia**
 
