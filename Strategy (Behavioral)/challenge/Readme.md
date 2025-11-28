@@ -1,21 +1,32 @@
 # Kata: Strategy – Challenge
 
-## Contexto
+## Instrucciones del reto
 
-Tienes un sistema de pagos en línea con una clase `PaymentProcessor` que decide cómo procesar el pago según un `String` con el tipo de pago:
+Tienes un sistema de pagos que utiliza una clase `PaymentProcessor` para procesar diferentes métodos de pago: **CREDIT_CARD**, **PAYPAL** y **CASH**.
 
-- `"CREDIT_CARD"`
-- `"PAYPAL"`
-- `"CRYPTO"`
-- Otros que se vayan agregando.
+Actualmente, `PaymentProcessor` usa condicionales (`if`/`else`) para decidir qué lógica ejecutar.  
+Tu tarea es **identificar los problemas de diseño** y **refactorizar el código** aplicando el patrón **Strategy**.
 
-Actualmente el código usa un gran bloque de `if/else` para decidir qué hacer para cada tipo. Esto hace que el código sea difícil de mantener, probar y extender.
+> Importante: No cambies el comportamiento observable del sistema (la salida en consola debe seguir siendo coherente con el tipo de pago).
 
 ---
 
-## Código actual (a refactorizar)
+## Contexto del sistema
 
-### `Main.java`
+El usuario ejecuta el programa, elige un método de pago y proporciona un monto.  
+La clase `PaymentProcessor` se encarga de:
+
+- Validar el tipo de pago.
+- Imprimir mensajes específicos según el método.
+- Simular el procesamiento del pago.
+
+Queremos que este comportamiento se mantenga, pero con un diseño más flexible.
+
+---
+
+## Código a Refactorizar
+
+### Archivo: `challenge/Main.java`
 
 ```java
 package strategy.challenge;
@@ -25,15 +36,17 @@ public class Main {
         PaymentProcessor processor = new PaymentProcessor();
 
         processor.processPayment("CREDIT_CARD", 500.0);
-        processor.processPayment("PAYPAL", 1200.0);
-        processor.processPayment("CRYPTO", 250.0);
+        processor.processPayment("PAYPAL", 250.0);
         processor.processPayment("CASH", 100.0);
+
+        // Si se intenta un método no soportado:
+        processor.processPayment("CRYPTO", 999.0);
     }
 }
 
 ```
 
-### 'PaymentProcessor.java'
+### 'challenge/PaymentProcessor.java'
 
 
 ```java
