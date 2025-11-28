@@ -58,4 +58,4 @@ El cliente solo llama a un método como `placeOrder(...)`.
 ## Referencias
 
 - “Design Patterns: Elements of Reusable Object-Oriented Software” (GoF).
-- Repositorio de referencia de patrones de diseño del curso.
+
