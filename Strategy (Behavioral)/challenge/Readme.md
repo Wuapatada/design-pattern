@@ -77,13 +77,43 @@ public class PaymentProcessor {
 ```
 Problemas a identificar
 
--PaymentProcessor tiene demasiadas responsabilidades.
+PaymentProcessor tiene demasiadas responsabilidades.
 
--Cada nueva forma de pago implica modificar esta clase.
+El uso de múltiples if/else provoca:
 
--Violación del principio abierto/cerrado.
+Código difícil de extender.
 
--Dificultad para probar cada comportamiento de manera aislada.
+Violación del principio abierto/cerrado (OCP).
 
+Si se agrega un nuevo tipo de pago:
+
+Hay que modificar PaymentProcessor.
+
+Aumenta el riesgo de introducir errores.
+
+No hay una abstracción común para las estrategias de pago.
+
+Objetivo del refactor
+
+Crear una interfaz común de pago (por ejemplo PaymentStrategy).
+
+Crear una clase concreta por cada tipo de pago.
+
+Hacer que el código cliente use polimorfismo en lugar de condicionales.
+
+Tips
+
+¿Qué comportamiento es común a todas las formas de pago?
+→ Identifica ese comportamiento y conviértelo en una interfaz.
+
+¿Qué partes del código cambian cuando agregas un nuevo tipo de pago?
+→ Esas partes son candidatas a convertirse en estrategias.
+
+¿Cómo puedes evitar que PaymentProcessor conozca todos los tipos concretos?
+→ Haz que dependa de la abstracción, no de las implementaciones.
+
+Recuerda:
+
+El cliente no debería saber cómo se procesa el pago, solo debería pedir que se procese.
 
 
