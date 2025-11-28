@@ -94,7 +94,9 @@ public class PaymentProcessor {
 
 ## Objetivo del refactor
 -Crear una interfaz común de pago (por ejemplo PaymentStrategy).
+
 -Crear una clase concreta por cada tipo de pago.
+
 -Hacer que el código cliente use polimorfismo en lugar de condicionales.
 
 ## Tips
