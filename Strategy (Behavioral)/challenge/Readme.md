@@ -1,4 +1,4 @@
-# Kata: Strategy – Challenge
+# Reto(Strategy) 
 
 ## Instrucciones del reto
 
@@ -75,33 +75,22 @@ public class PaymentProcessor {
     }
 }
 ```
-Problemas a identificar
+##Problemas a identificar
+-PaymentProcessor tiene demasiadas responsabilidades.
+-El uso de múltiples if/else provoca:
+-Código difícil de extender.
+-Violación del principio abierto/cerrado (OCP).
+-Si se agrega un nuevo tipo de pago:
+-Hay que modificar PaymentProcessor.
+-Aumenta el riesgo de introducir errores.
+-No hay una abstracción común para las estrategias de pago.
 
-PaymentProcessor tiene demasiadas responsabilidades.
+##Objetivo del refactor
+-Crear una interfaz común de pago (por ejemplo PaymentStrategy).
+-Crear una clase concreta por cada tipo de pago.
+-Hacer que el código cliente use polimorfismo en lugar de condicionales.
 
-El uso de múltiples if/else provoca:
-
-Código difícil de extender.
-
-Violación del principio abierto/cerrado (OCP).
-
-Si se agrega un nuevo tipo de pago:
-
-Hay que modificar PaymentProcessor.
-
-Aumenta el riesgo de introducir errores.
-
-No hay una abstracción común para las estrategias de pago.
-
-Objetivo del refactor
-
-Crear una interfaz común de pago (por ejemplo PaymentStrategy).
-
-Crear una clase concreta por cada tipo de pago.
-
-Hacer que el código cliente use polimorfismo en lugar de condicionales.
-
-Tips
+##Tips
 
 ¿Qué comportamiento es común a todas las formas de pago?
 → Identifica ese comportamiento y conviértelo en una interfaz.
