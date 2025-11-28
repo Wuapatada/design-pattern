@@ -1,4 +1,24 @@
+# Kata: Strategy
 
+## Contexto del problema
+
+Estás trabajando en un sistema de pagos en línea.  
+Actualmente tienes una clase `PaymentProcessor` que recibe un tipo de pago como `String` (`"CREDIT_CARD"`, `"PAYPAL"`, `"CRYPTO"`, etc.) y dentro de un gran bloque de `if/else` decide:
+
+- Qué pasos ejecutar.
+- Cómo validar la información.
+- Cómo procesar el pago.
+
+Cada vez que el negocio agrega una nueva forma de pago (por ejemplo, `CASH`, `BANK_TRANSFER`, etc.) tienes que **volver a modificar** `PaymentProcessor`, agregar otro `if` y mezclar más lógica en la misma clase.
+
+Problemas actuales:
+
+- Mucho `if/else` con lógica mezclada.
+- Difícil de extender sin tocar código existente (rompe el principio abierto/cerrado).
+- Difícil de probar y mantener.
+- No se puede cambiar el "comportamiento de pago" dinámicamente sin tocar el código de la clase.
+
+---
 
 ## El patrón: Strategy
 
@@ -49,4 +69,27 @@ Usa **Strategy** cuando:
 - Tu clase tiene muchos `if/else` o `switch` que seleccionan comportamientos según un tipo o estado.
 - Quieres **limpiar** una clase que hace demasiadas cosas y extraer comportamientos en clases independientes.
 
+---
+
+## Principios SOLID aplicados
+
+- **S – Single Responsibility Principle (SRP)**  
+  Cada estrategia concreta tiene una única responsabilidad: implementar una forma específica de pago.
+
+- **O – Open/Closed Principle (OCP)**  
+  Para agregar una nueva forma de pago, solo creas una nueva clase que implementa `PaymentStrategy`.  
+  No necesitas modificar el código existente.
+
+- **D – Dependency Inversion Principle (DIP)**  
+  El contexto (`PaymentContext`) depende de la **abstracción** `PaymentStrategy`, no de implementaciones concretas.
+
+---
+
+## Referencias externas
+
+- *Head First Design Patterns* – Capítulo de Strategy.
+- *Design Patterns: Elements of Reusable Object-Oriented Software* (GoF) – Strategy Pattern.
+- Artículo “Strategy Pattern” en Refactoring.Guru.
+- Repositorio de referencia del curso:  
+  `https://github.com/luisburgos/design_patterns_katas`
 
