@@ -33,4 +33,4 @@ costosa, incluso si nunca llamas a `display()`.
 ## Recursos adicionales
 
 - Ejemplos de Virtual Proxy en la literatura de patrones.
-- Diapositivas del curso sobre patrones estructurales.
+
