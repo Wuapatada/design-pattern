@@ -84,6 +84,7 @@ public class PaymentProcessor {
 -Hay que modificar PaymentProcessor.
 -Aumenta el riesgo de introducir errores.
 -No hay una abstracción común para las estrategias de pago.
+---
 
 ## Objetivo del refactor
 -Crear una interfaz común de pago (por ejemplo PaymentStrategy).
